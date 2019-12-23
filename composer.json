@@ -1,0 +1,49 @@
+{
+    "name": "harryjhonny/laravel-feature-flag",
+    "description": "A Laravel package for handling feature flags",
+    "keywords": [
+        "harryjhonny",
+        "laravel-feature-flag"
+    ],
+    "homepage": "https://github.com/harryjhonny/laravel-feature-flag",
+    "license": "MIT",
+    "type": "library",
+    "require": {
+        "php": "^7.2",
+        "illuminate/support": "5.7.*"
+    },
+    "require-dev": {
+        "orchestra/testbench": "4.0.*|3.9.*|3.8.*",
+        "phpunit/phpunit": "^8.3.4",
+        "mockery/mockery": "^1.2.3",
+        "scrutinizer/ocular": "^1.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Harryjhonny\\FeatureFlags\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Harryjhonny\\FeatureFlags\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit --no-coverage",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Harryjhonny\\FeatureFlags\\FeatureFlagsServiceProvider"
+            ],
+            "aliases": {
+                "FeatureFlags": "Harryjhonny\\FeatureFlags\\Facades\\Features"
+            }
+        }
+    }
+}
